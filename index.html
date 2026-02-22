@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Agency | AI Automation That Ships in Days, Not Months</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.5rem; margin-bottom: 30px; opacity: 0.95; font-weight: 400; }
+        .hero .cta { display: inline-block; background: white; color: #1e3a8a; padding: 18px 40px; font-size: 1.1rem; font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: 20px; transition: transform 0.2s; }
+        .hero .cta:hover { transform: scale(1.05); }
+        .hero .trust { margin-top: 40px; font-size: 0.9rem; opacity: 0.9; }
+        
+        /* Differentiator */
+        .differentiator { padding: 80px 20px; background: #fff5e6; border-top: 4px solid #f59e0b; border-bottom: 4px solid #f59e0b; }
+        .differentiator .container { max-width: 900px; text-align: center; }
+        .differentiator h2 { font-size: 2rem; margin-bottom: 20px; color: #1e3a8a; }
+        .differentiator p { font-size: 1.2rem; color: #333; line-height: 1.7; }
+        
+        /* Problems */
+        .problems { padding: 80px 20px; background: #f8f9fa; }
+        .problems h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .problems-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .problem-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .problem-card .icon { font-size: 3rem; margin-bottom: 15px; }
+        .problem-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        .problem-card p { color: #666; line-height: 1.6; font-size: 0.95rem; }
+        
+        /* Solutions */
+        .solutions { padding: 80px 20px; }
+        .solutions h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .solution-card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.2s; }
+        .solution-card:hover { transform: translateY(-5px); }
+        .solution-card .icon { font-size: 3rem; margin-bottom: 15px; }
+        .solution-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #1e3a8a; }
+        .solution-card p { color: #666; line-height: 1.6; }
+        
+        /* Stats */
+        .stats { padding: 80px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .stat-item .number { font-size: 4rem; font-weight: 800; margin-bottom: 10px; }
+        .stat-item .label { font-size: 1.2rem; opacity: 0.95; }
+        
+        /* Pricing */
+        .pricing { padding: 80px 20px; background: #f8f9fa; }
+        .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .pricing-card { background: white; border: 2px solid #e9ecef; border-radius: 12px; padding: 40px; text-align: center; transition: transform 0.2s; }
+        .pricing-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
+        .pricing-card.popular { border-color: #3b82f6; border-width: 3px; position: relative; }
+        .pricing-card.popular:before { content: "Most Popular"; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3b82f6; color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
+        .pricing-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .pricing-card .price { font-size: 3rem; font-weight: 800; color: #1e3a8a; margin: 20px 0; }
+        .pricing-card .timeline { color: #666; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 30px 0; }
+        .pricing-card li { padding: 10px 0; padding-left: 30px; position: relative; }
+        .pricing-card li:before { content: "✓"; position: absolute; left: 0; color: #28a745; font-weight: bold; }
+        .pricing-card li.disabled { color: #999; }
+        .pricing-card li.disabled:before { content: "×"; color: #dc3545; }
+        .pricing-card .btn { display: block; background: #3b82f6; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: background 0.2s; }
+        .pricing-card .btn:hover { background: #2563eb; }
+        
+        /* Testimonials */
+        .testimonials { padding: 80px 20px; }
+        .testimonials h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .testimonial-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .testimonial-card .quote { color: #333; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; font-style: italic; }
+        .testimonial-card .author { font-weight: 700; }
+        .testimonial-card .title { color: #666; font-size: 0.9rem; }
+        
+        /* FAQ */
+        .faq { padding: 80px 20px; background: #f8f9fa; }
+        .faq h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .faq-item { max-width: 800px; margin: 0 auto 30px; }
+        .faq-item h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1e3a8a; }
+        .faq-item p { color: #666; line-height: 1.6; }
+        
+        /* CTA */
+        .cta-section { padding: 80px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 900px; margin: 30px auto; }
+        .cta-section .benefit { padding: 15px; }
+        .cta-section .benefit:before { content: "✓"; font-weight: bold; margin-right: 10px; }
+        .cta-section .btn { display: inline-block; background: white; color: #1e3a8a; padding: 18px 40px; font-size: 1.1rem; font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: 20px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .problems-grid, .solutions-grid, .stats-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .cta-section .benefits { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="1e600e31-9df5-4afc-bee6-0f1951202b94"></script>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>AI Automation That Ships<br>in Days, Not Months</h1>
+            <p class="subtitle">First automation live in 48 hours. We BUILD with AI agents, not just talk about them.</p>
+            <a href="#pricing" class="cta">Start Automating This Week</a>
+            <p class="trust">Trusted by teams that ship fast</p>
+        </div>
+    </div>
+
+    <div class="differentiator">
+        <div class="container">
+            <h2>We Build Systems. Not Consulting Decks.</h2>
+            <p>Most automation agencies sell you PowerPoints and 8-week timelines. We ship working code in 48 hours. No strategy sessions. No discovery phases. Just automation that runs.</p>
+        </div>
+    </div>
+
+    <div class="problems">
+        <div class="container">
+            <h2>The Real Cost of Manual Work</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="icon">⏰</div>
+                    <h3>Time Drain</h3>
+                    <p>Your best people spend 40% of their day on data entry, follow-ups, and admin tasks that a bot could do.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">💸</div>
+                    <h3>Hiring Trap</h3>
+                    <p>Hiring more staff costs more than automation and delivers diminishing returns. Bots scale infinitely.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">📉</div>
+                    <h3>Growth Ceiling</h3>
+                    <p>Without intelligent systems, scaling means exponential cost increases, not profit increases.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">😓</div>
+                    <h3>Human Error</h3>
+                    <p>Manual processes = costly mistakes, missed opportunities, and teams that hate repetitive work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="solutions">
+        <div class="container">
+            <h2>What We Build</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="icon">🤖</div>
+                    <h3>AI-Powered Workflows</h3>
+                    <p>Intelligent automation that learns from patterns and adapts to your business processes without constant updates.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">🔗</div>
+                    <h3>System Integration</h3>
+                    <p>Connect all your tools into one cohesive system. Data flows automatically between platforms.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">📊</div>
+                    <h3>Real-Time Dashboards</h3>
+                    <p>See exactly how much time saved, errors prevented, and ROI generated. Numbers, not guesses.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-grade encryption and compliance built in from day one. SOC2-ready infrastructure.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">⚡</div>
+                    <h3>48-Hour Deploys</h3>
+                    <p>First automation live in 48 hours. Full system in days, not months. See results this week.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">🎯</div>
+                    <h3>Ongoing Optimization</h3>
+                    <p>Dedicated team monitoring and improving your systems continuously. Performance compounds over time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="number">247%</div>
+                    <div class="label">Avg Efficiency Gain</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">89%</div>
+                    <div class="label">Error Reduction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">$2.4M</div>
+                    <div class="label">Total Client Savings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple Project Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$2,500</div>
+                    <div class="timeline">Live in 3-5 days</div>
+                    <ul>
+                        <li>1-2 automated workflows</li>
+                        <li>Core integrations setup</li>
+                        <li>Basic analytics dashboard</li>
+                        <li>30-day support window</li>
+                        <li>Documentation & training</li>
+                        <li class="disabled">Custom AI model training</li>
+                        <li class="disabled">Ongoing managed service</li>
+                    </ul>
+                    <a href="#book" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <h3>Professional</h3>
+                    <div class="price">$7,500</div>
+                    <div class="timeline">Live in 5-7 days</div>
+                    <ul>
+                        <li>3-5 automated workflows</li>
+                        <li>Advanced integrations</li>
+                        <li>Real-time analytics suite</li>
+                        <li>90-day support window</li>
+                        <li>Team training sessions</li>
+                        <li>Custom AI model training</li>
+                        <li class="disabled">24/7 managed service</li>
+                    </ul>
+                    <a href="#book" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$25K+</div>
+                    <div class="timeline">Custom timeline</div>
+                    <ul>
+                        <li>Unlimited workflows</li>
+                        <li>Full system integration</li>
+                        <li>Custom analytics & reporting</li>
+                        <li>Dedicated success manager</li>
+                        <li>On-site training</li>
+                        <li>Custom AI development</li>
+                        <li>24/7 managed service</li>
+                    </ul>
+                    <a href="#book" class="btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"Went from 20 hours of weekly data entry to zero. First automation shipped in 2 days. ROI was immediate and keeps compounding."</p>
+                    <p class="author">James Mitchell</p>
+                    <p class="title">CEO, TechFlow Solutions</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"They built what we actually needed, not what we asked for. Rare to find an agency that thinks like a partner, not a vendor."</p>
+                    <p class="author">Sarah Kim</p>
+                    <p class="title">COO, RapidScale</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Finally, an automation team that speaks business, not just code. They understood our goals and delivered systems that actually move metrics."</p>
+                    <p class="author">Michael Roberts</p>
+                    <p class="title">Founder, GrowthLab</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>How fast can we go live?</h3>
+                <p>First automation live in 48 hours for Starter and Professional. Full system in 3-7 days depending on complexity. Enterprise timelines are custom.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do we need technical knowledge?</h3>
+                <p>No. We build user-friendly interfaces and provide full training. If you can use email, you can use our systems.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What platforms do you integrate?</h3>
+                <p>200+ platforms including Salesforce, HubSpot, Slack, Notion, Airtable, Google Workspace, Stripe, and more. Custom API connectors for anything else.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What kind of ROI can we expect?</h3>
+                <p>Most clients see 300-500% ROI within the first year. Exact return depends on your current manual processes and what we automate.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens after the project ends?</h3>
+                <p>All packages include support windows. Enterprise gets 24/7 managed service. We also offer monthly maintenance packages starting at $1,500/month for optimization and updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section" id="book">
+        <div class="container">
+            <h2>Let's Build Your Automation</h2>
+            <div class="benefits">
+                <div class="benefit">Free 30-min strategy call</div>
+                <div class="benefit">Custom workflow plan</div>
+                <div class="benefit">Transparent pricing</div>
+                <div class="benefit">No obligation quote</div>
+            </div>
+            <a href="mailto:henry@curacel.ai?subject=OpenClaw Agency Project Inquiry" class="btn">Book Strategy Call</a>
+        </div>
+    </div>
+</body>
+</html>
