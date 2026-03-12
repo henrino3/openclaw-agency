@@ -1,8 +1,8 @@
 ---
-title: "Why "Custom" Beats "Off-the-Shelf" for Enterprise Agents (March 2026)"
-heroImage: "/hero-custom-vs-off-the-shelf-enterprise-agents.png"
-heroImagePublic: "/images/hero-custom-vs-off-the-shelf-enterprise-agents.png"
-heroImageAstro: "../../assets/hero-custom-vs-off-the-shelf-enterprise-agents.png"
+title: 'Why \"Custom\" Beats \"Off-the-Shelf\" for Enterprise Agents (March 2026)'
+description: 'A deep dive into Why \"Custom\" Beats \"Off-the-Shelf\" for Enterprise Agents (March 2026)'
+pubDate: "Mar 12 2026"
+heroImage: "../../assets/hero-custom-vs-off-the-shelf-enterprise-agents.png"
 ---
 # Why "Custom" Beats "Off-the-Shelf" for Enterprise Agents (March 2026)
 

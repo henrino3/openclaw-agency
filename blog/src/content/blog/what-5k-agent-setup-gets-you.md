@@ -1,8 +1,8 @@
 ---
-title: "What a $5K Agent Setup Actually Gets You"
-heroImage: "/hero-what-5k-agent-setup-gets-you.png"
-heroImagePublic: "/images/hero-what-5k-agent-setup-gets-you.png"
-heroImageAstro: "../../assets/hero-what-5k-agent-setup-gets-you.png"
+title: 'What a $5K Agent Setup Actually Gets You'
+description: 'A deep dive into What a $5K Agent Setup Actually Gets You'
+pubDate: "Mar 12 2026"
+heroImage: "../../assets/hero-what-5k-agent-setup-gets-you.png"
 ---
 # What a $5K Agent Setup Actually Gets You
 

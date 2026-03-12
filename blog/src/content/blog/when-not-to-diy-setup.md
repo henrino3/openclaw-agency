@@ -1,8 +1,8 @@
 ---
-title: "When You Shouldn't Set Up OpenClaw Yourself"
-heroImage: "/hero-when-not-to-diy-setup.png"
-heroImagePublic: "/images/hero-when-not-to-diy-setup.png"
-heroImageAstro: "../../assets/hero-when-not-to-diy-setup.png"
+title: 'When You Shouldn''t Set Up OpenClaw Yourself'
+description: 'A deep dive into When You Shouldn''t Set Up OpenClaw Yourself'
+pubDate: "Mar 12 2026"
+heroImage: "../../assets/hero-when-not-to-diy-setup.png"
 ---
 # When You Shouldn't Set Up OpenClaw Yourself
 

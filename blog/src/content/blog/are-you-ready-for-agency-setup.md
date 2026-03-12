@@ -1,8 +1,8 @@
 ---
-title: "Are You Ready for Done-For-You Agent Setup?"
-heroImage: "/hero-are-you-ready-for-agency-setup.png"
-heroImagePublic: "/images/hero-are-you-ready-for-agency-setup.png"
-heroImageAstro: "../../assets/hero-are-you-ready-for-agency-setup.png"
+title: 'Are You Ready for Done-For-You Agent Setup?'
+description: 'A deep dive into Are You Ready for Done-For-You Agent Setup?'
+pubDate: "Mar 12 2026"
+heroImage: "../../assets/hero-are-you-ready-for-agency-setup.png"
 ---
 # Are You Ready for Done-For-You Agent Setup?
 
